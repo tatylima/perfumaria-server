@@ -1,13 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
+import { Product } from './entities/product.entity';
 
 @Injectable()
 export class ProductService {
+  products: Product[] = [];
+
   findAll() {
-    return 'Buscar todos os perfumes';
+    return this.products;
   }
 
   create(createProductDto: CreateProductDto) {
-    return 'Criar um pedido' + JSON.stringify(createProductDto);
+    const product: Product = { id: 'random_id', ...createProductDto };
+    this.products.push(product);
+
+    return product;
   }
 }
