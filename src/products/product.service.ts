@@ -9,22 +9,22 @@ export class ProductService {
   constructor(private readonly prisma: PrismaService) {}
 
   create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+    return 'Adicionar um novo perfume';
   }
 
   findAll() {
-    return `This action returns all product`;
+    return `Retornar todos os perfumes`;
   }
 
   findOne(id: string) {
-    return `This action returns a #${id} product`;
+    return `Retornar #${id} do perfume`;
   }
 
   update(id: string, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+    return `Retorna updates  #${id} perfume`;
   }
 
   delete(id: string) {
-    return `This action removes a #${id} product`;
+    return `Remover o #${id} perfume`;
   }
 }
