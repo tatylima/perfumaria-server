@@ -11,12 +11,15 @@ model Product {
   description String
   price       Float
   image       String
-                        // NOVOS DECORATORS ABAIXO:
+
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
+  orders Order[]
+
   @@map("product")
 }
+
 model User {
   id       String @id @default(uuid())
   nickname String @unique
@@ -27,5 +30,21 @@ model User {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
+  orders Order[]
+
   @@map("user")
+}
+
+model Order {
+  id String @id @default(uuid())
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @map("user_id")
+
+  products Product[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("order")
 }
