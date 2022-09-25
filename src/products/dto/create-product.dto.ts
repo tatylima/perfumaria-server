@@ -1,11 +1,35 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNumber, IsPositive } from 'class-validator';
+import { IsNumber, IsString, IsUrl } from 'class-validator';
+
 export class CreateProductDto {
-  @IsNumber()
-  @IsPositive()
+  @IsString()
   @ApiProperty({
-    description: 'O número do pedido',
-    example: 1,
+    description: 'Nome do perfume',
+    example: 'Lilly',
   })
-  number: number;
+  name: string;
+
+  @IsString()
+  @ApiProperty({
+    description: 'Descrição do perfurme',
+    example:
+      'Flores',
+  })
+  description: string;
+
+  @IsNumber({
+    maxDecimalPlaces: 2,
+  })
+  @ApiProperty({
+    description: 'Preço do perfume',
+    example: 12.34,
+  })
+  price: number;
+
+  @IsUrl()
+  @ApiProperty({
+    description: 'Imagem do produto',
+    example: 'https://i.imgur.com/hNE75Iw.png',
+  })
+  image: string;
 }

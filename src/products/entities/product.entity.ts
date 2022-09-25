@@ -1,4 +1,9 @@
 export class Product {
   id?: string;
-  number: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
