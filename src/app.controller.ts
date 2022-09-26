@@ -1,17 +1,25 @@
-import { Controller, Get } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { AppService } from './app.service';
+import { Controller, Get, Req } from "@nestjs/common";
+import { ApiOperation, ApiTags } from "@nestjs/swagger";
+import { Request } from "express";
+import { AppService } from "./app.service";
 
-@ApiTags('status')
+@ApiTags("status")
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+	constructor(private readonly appService: AppService) {}
 
-  @Get()
-  @ApiOperation({
-    summary: 'Visualizar status da aplicação',
-  })
-  getAppStatus(): string {
-    return this.appService.getAppStatus();
-  }
+	/**
+	 * Recebe uma requisição GET e retorna um objeto de status
+	 * da aplicação com a URL de documentação
+	 * @param req Objeto de Request do Express
+	 * @returns Objeto de status da aplicação
+	 */
+	@Get()
+	@ApiOperation({
+		summary: "Visualizar status da aplicação",
+	})
+	getAppStatus(@Req() req: Request) {
+		const baseUrl = req.protocol + "://" + req.get("host");
+		return this.appService.getAppStatus(baseUrl);
+	}
 }
