@@ -36,7 +36,7 @@ export class CreateUserDto {
   @IsUrl()
   @ApiProperty({
     description: 'Imagem de perfil do usuário',
-    example: 'https://avatars.githubusercontent.com/u/7906171',
+    example: 'https://avatars.githubusercontent.com/u/97984721?v=4',
   })
   image: string;
 }

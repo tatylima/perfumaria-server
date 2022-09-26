@@ -6,6 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "compodoc": "npx @compodoc/compodoc -p tsconfig.json -s",
     "seed": "ts-node ./src/prisma/seed.ts",
     "prebuild": "rimraf dist",
     "build": "nest build",

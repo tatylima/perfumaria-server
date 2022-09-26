@@ -22,14 +22,14 @@ export class CreateProductDto {
   })
   @ApiProperty({
     description: 'Preço do perfume',
-    example: 12.34,
+    example: 144.90,
   })
   price: number;
 
   @IsUrl()
   @ApiProperty({
     description: 'Imagem do produto',
-    example: 'https://i.imgur.com/hNE75Iw.png',
+    example: 'https://www.boticario.com.br/lily-eau-de-parfum-nova-versao-30ml',
   })
   image: string;
 }

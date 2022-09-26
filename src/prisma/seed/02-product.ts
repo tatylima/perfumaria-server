@@ -2,24 +2,24 @@ import { Prisma, PrismaClient } from "@prisma/client";
 
 export const products: Prisma.ProductCreateInput[] = [
 	{
-		name: "Lancome",
+		name: "Paris",
 		description:
-			"La Vie Est Belle Lancôme - Perfume Feminino - Eau de Parfum - 30ml",
+			"Perfume Feminino 30ml",
 		price: 299.99,
-		image: "",
+		image: "https://i.imgur.com/mwoKryx.jpeg",
 	},
 	{
-		name: "Libre Yves Saint Laurent",
-		description:"Libre Yves Saint Laurent Perfume Feminino - Eau de Parfum - 30ml",
+		name: "Channel",
+		description:"Channel 05",
 		price: 379.00,
-		image: "",
+		image: "https://i.imgur.com/zlck0D1.jpeg",
 	},
 	{
-		name: "Giorgio Armani",
+		name: "Eau de pamplemousse rose",
 		description:
-			"Acqua Di Giò Homme Giorgio Armani - Perfume Masculino - Eau de Toilette - 100ml",
+			" Perfume Masculino - Eau de Toilette - 100ml",
 		price: 432.00,
-		image: "",
+		image: "https://i.imgur.com/pGspSES.jpeg",
 	},
 ];
 

@@ -6,7 +6,7 @@ export const users: Prisma.UserCreateInput[] = [
 		nickname: "tatianagandra",
 		name: "Tatiana Gandra",
 		password: "Abcd@1234",
-		image: "https://avatars.githubusercontent.com/u/7906171",
+		image: "https://avatars.githubusercontent.com/u/97984721?v=4",
 	},
 ];
 
